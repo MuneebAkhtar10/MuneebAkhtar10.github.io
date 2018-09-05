@@ -1,2 +1,2 @@
 theme: jekyll-theme-hacker
-welcome
+www.jekyllrb.com
