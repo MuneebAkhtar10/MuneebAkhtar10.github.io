@@ -1,13 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>" Muneeb Profile"</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+  
+ $(document).ready(function(){
+   $('.login-button').on('click', () => {
+    $('.login-form').slideToggle("slow");
+    $('.login-button').toggleClass('button-active');
+  });
 
+ 
+ $(".seeMore").on('click', () => {
+    $('.more').slideToggle();
+    $('.seeMore').toggleClass('button-active');
+  });
+  })
+ function validateForm() {
+   var x = document.forms["myForm"]["name"].value;
+    if (x == "") {
+        alert("Please enter your name");
+		
+        return false;
+    }
+	if(!isNaN(x))
+	{
+		alert("Please enter only characters" );
+		
+        return false;
+	}
+	
+	if ((x.length < 6) || (x.length > 15))
+	{
+	alert("Your Character must be 6 to 15 Character");
+	return false;
+	}
+		
+	
+	var y=document.forms["myForm"]["subject"].value;
+	if(y=="")
+	{
+		alert("Message must be filled out");
+		return false;
+	}
+} 
+
+
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+	}
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+    $("#flip").click(function(){
+        $("#panel").slideDown(4000);
+    });
+    $("#stop").click(function(){
+        $("#panel").stop();
+    });
+});
+</script>
+
+<title>" Muneeb Profile"</title>
 <link href="index2.css" type="text/css" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 
-<body>
+  <body onload= "startTime()">
+  <div id="txt"></div>
 <header class="container">
   <div class="rows">
     <h1 class="col-sm-4">Personal Profile</h1>
@@ -21,6 +95,12 @@
     </nav>
   </div>
 </header>
+
+
+
+
+<div id="flip">Click to slide down </div>
+<div id="panel">Hello Ma'am Shamsa Abid !!</div>
   
 <header class="contain">
   <div class="row">
@@ -149,7 +229,57 @@
     </figure>
     </div>
   </section>
-	      
+	     
+	<!-- Contact Form -->
+	<div>
+      <button class='login-button'>CONTACT</button>
+    </div>
+    <div class='login-form'>
+      <div class='container'>
+        <form name ="myForm" action="/action_page.php"
+	      onsubmit="return validateForm()" method="post">
+
+	<fieldset>
+    <legend>CONTACT</legend>
+      <div class="row">
+        <div class="col-25">
+          <label for="date">Name</label>
+      </div>
+          <div class="col-75">
+          <input type="text" id="name" name="name" placeholder="Name" >
+	      </div>
+      </div>
+	
+	<div class="row">
+	<div class ="col-25">
+	<label for = "country" > Country </label>
+	<div>
+	<div class="col-75">
+	
+	<select name="Country">
+    <option value="Pakistan">Pakistan</option>
+    <option value="India">India</option>
+    <option value="USA">USA</option>
+    <option value="Thailand">Thailand</option>
+    </select>
+	</div>
+	</div>
+	
+	<div class="row">
+      <div class="col-25">
+        <label id="s" for="subject">Message</label>
+      </div>
+        <div class="col-75">
+        <textarea id="subject" name="subject" placeholder="Message" style="height:140px"></textarea>
+      </div>
+    </div>
+	  
+    </div>
+  </div>
+  	<input type='submit' value='Submit' />
+
+</fieldset>
+</form>		 
 	
 <footer class="container">
   <div class="row2">
