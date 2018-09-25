@@ -120,23 +120,23 @@ header p {
   margin-top:25px;
 }
 
-.col-sm-12 h5{
+.col h5{
 	font-size:16px;
   display: flex;
   justify-content: flex-start;
   margin-left:550px;
  bottom:100px;
 }
-.col-sm-12 h1{
+.col h1{
 	 margin-left:70px;
 	 margin-bottom: 100px;
    font-family:  font-family: 'Roboto', sans-serif;
   font-weight: 500;
 }
-.col-sm-12 h3{
+.col h3{
 	position:absolute;
-	top:60px;
-	 margin-left:110px;
+	top:240px;
+	 margin-left:200px;
    font-family:  font-family: 'Roboto', sans-serif;
   font-weight: 300;
 }
